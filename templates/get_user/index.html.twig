@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Users index{% endblock %}
+
+{% block body %}
+    <h1 style="border-style: dotted;border-width: thick; border-color: blue; color: blue">Users index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>    {#th etiquetas de cabeza #}
+                <th style="Color:blue; border-style: groove; border-width: 5px">Id</th>
+                <th style="Color:blue; border-style: groove; border-width: 5px">login</th>
+                <th style="Color:blue; border-style: groove; border-width: 5px">Name</th>
+                <th style="Color:blue; border-style: groove; border-width: 5px">Lastname</th>
+                <th style="Color:blue; border-style: groove; border-width: 5px">Email</th>
+                <th style="Color:blue; border-style: groove; border-width: 5px">Password</th>
+                <th style="Color:blue; border-style: groove; border-width: 5px">actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}  {# se escribe html dentro del for de twig - mostrar lista de usuarios proporcionada en una variable users#}
+            <tr>            {#th etiquetas del cuerpo de la tabla #}
+                <td>{{ user.id }}</td>
+                <td>{{ user.login }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.lastname }}</td>
+                <td  >{{ user.email }}</td>
+                <td id="password" style="visibility:collapse; border:red 2px solid"; > {{ user.password }} </td>  {#th ocultado el password #}
+                <td>
+                    <a href="{{ path('app_get_user_show', {'id': user.id}) }}">show</a>
+                    <a href="{{ path('app_get_user_edit', {'id': user.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_get_user_new') }}" style="font-style: italic" >Create new</a>
+{% endblock %}
+
+
+

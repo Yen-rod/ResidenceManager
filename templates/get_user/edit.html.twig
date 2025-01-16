@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Users{% endblock %}
+
+{% block body %}
+    <h1 style="border-style: dotted;border-width: thick; border-color: blue; color: blue">Edit Users</h1>
+
+    {{ include('get_user/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_get_user_index') }}"style="font-style: italic">back to list</a>
+
+    {{ include('get_user/_delete_form.html.twig') }}
+{% endblock %}
+

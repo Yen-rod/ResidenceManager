@@ -1,0 +1,20 @@
+{
+    "controllers": [],
+
+    //comentado todo lo de abajo al instalar Encore. 
+    // {
+    //     "@symfony/ux-turbo": {
+    //         "turbo-core": {
+    //             "enabled": true,
+    //             "fetch": "eager"
+    //         },
+    //         "mercure-turbo-stream": {
+    //             "enabled": false,
+    //             "fetch": "eager"
+    //         }
+    //     }
+    // },
+
+    "entrypoints": []
+}
+
